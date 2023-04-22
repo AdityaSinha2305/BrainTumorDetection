@@ -1,0 +1,88 @@
+{% extends 'base.html' %}           
+{% block title %}Prediction{%  endblock title %}
+{% block body  %}
+
+{% with messages=get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{message}}
+
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    
+    </div>
+
+    {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+
+<div class="container mt-3">
+
+    <div class="row">
+          
+      <div class="col-md-4"></div>
+
+      <div class="col-md-4">
+        <h4 class="text-center bg-dark text-white">Upload Brain MRI Image</h4>
+        <br>
+        <form action="{{url_for("upload")}}" method="POST">
+          <div class="form-group mt-3">         
+                                    
+            <select class="form-control" id="model" name="model"  required>
+                      <option value="">--Select Model--</option>
+                      <option value="CNN">CNN</option>
+                      <option value="MobileNet">MobileNet</option>
+            </select>
+        
+          </div>
+
+          <br/>
+
+          <div class="form-group mt-3">
+            <label for="filename"><input type="file" id="myFile" name="filename"></label>
+          </div>
+
+          
+          <br>
+
+          <div class="form-group mt-3"> 
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+
+     </div>
+      <div class="col-md-4"></div>
+
+    </div>
+
+    
+    <br/>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        Predicted Result : {{res}}
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <img src="/static/images/{{filename}}" alt="imagenotfound" width="300" height="300"/>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+    
+
+    
+
+
+</div>
+
+{% endblock body  %}

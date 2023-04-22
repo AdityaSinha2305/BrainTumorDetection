@@ -1,0 +1,84 @@
+{% extends 'base.html' %}           
+{% block title %}SIGNUP{%  endblock title %}
+{% block body  %}
+
+
+<style>
+  body {
+    background-image: url('static/images/4.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+
+
+  </style>
+
+
+<div class="container  mt-4">
+
+
+
+<div class="row">
+
+<div class="col-md-4"></div>
+
+
+<div class="col-md-4 jumbotron">
+    
+    <h4 class="text-center bg-info text-white">Sign Up Here</h4>
+    <br>
+    
+    {% with messages=get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{message}}
+
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    
+    </div>
+
+
+
+
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+
+    <form action="/signup" method="POST">
+        <div class="mb-3">
+            <label for="username" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+          <div id="emailHelp" class="form-text" style="color:black">We'll never share your email with anyone else.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" minlength="8" required>
+          <div id="passwordHelp" class="form-text" style="color:black">Password must be atleast 8 characters.</div>
+        </div>
+
+        <button type="submit" class="btn btn-info btn-sm btn-block">Signup</button>
+    </form>
+    <br>
+    Already a User <a href="/login" style="background-color:white">Sign in</a>
+
+  
+    
+</div>
+
+<div class="col-md-4"></div>
+
+</div>
+
+</div>
+
+  {% endblock body  %}

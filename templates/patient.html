@@ -1,0 +1,114 @@
+{% extends 'base.html' %}           
+{% block title %}Patient Details{%  endblock title %}
+{% block body  %}
+
+
+<div class="container mt-3">
+
+  <div class="row">
+        
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+
+      <h4 class="text-center bg-dark text-white">Patient Details</h4>
+      <br>
+      {% with messages=get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          {% for category, message in messages %}
+
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{message}}
+
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          
+          </div>
+
+
+
+          {% endfor %}
+          {% endif %}
+      {% endwith %}
+
+
+
+
+      <form action="/patient" method="POST">
+
+        <div class="form-group mt-3">
+
+          <input type="email" class="form-control" id="email" value={{current_user.email}} name="email" disabled required>
+        
+        </div>
+
+
+        <div class="form-group mt-3">
+
+          <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
+        
+        </div>
+
+        <div class="form-group mt-3">
+        
+          <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
+        
+        </div>
+
+
+        <div class="form-group mt-3">
+
+          
+          <input type="text" class="form-control" maxlength="2" name="age"  placeholder="Age" required>
+        </div>
+
+      <div class="form-group mt-3">         
+                                    
+      <select class="form-control" id="gender" name="gender"  required>
+              <option value="">--Select Gender--</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+      </select>
+
+      </div>
+
+
+
+        <div class="form-group mt-3">
+          
+          <input type="date" class="form-control" id="date" name="date" placeholder="DOB" required>
+        
+        </div>
+
+        <div class="form-group mt-3">
+
+          <input type="text" class="form-control" id="id" name="id" maxlength="2" placeholder="Id" required>
+        
+        </div>
+
+        <div class="form-group mt-3">
+
+          <input type="text" class="form-control" id="number" name="number" minlength="10" maxlength="10" placeholder="Phone Number" required>
+        
+        </div>
+
+      
+
+
+        <button type="reset" class="btn btn-primary btn-sm btn-block mt-3 me-5">Reset</button>
+        <button type="submit" class="btn btn-primary btn-sm btn-block mt-3">Next</button>   <!-- originally href=/busdetails-->
+
+      </form>
+
+    </div>
+
+
+    <div class="col-md-4"></div>
+
+
+  </div>
+</div>
+
+
+
+{% endblock body  %}
