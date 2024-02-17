@@ -5,7 +5,7 @@ The system employs machine learning algorithms to analyze medical imaging data, 
 Unlike traditional black-box AI models, this system incorporates explainable AI techniques to provide clinicians with insights into the decision-making process of the AI model, 
 enhancing transparency and trust in the diagnostic results.
 
-## Key Features:
+## Key Features
 - **User Authentication and Authorization:** The system supports user authentication and authorization to ensure that only authorized healthcare professionals have access to patient data and diagnostic tools.
 
 - **Upload and Processing of Medical Images:** Healthcare professionals can upload medical imaging data, such as MRI scans, to the system for analysis. The system processes the uploaded images using deep learning algorithms to detect potential brain tumours.
