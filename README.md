@@ -317,4 +317,4 @@ For questions or issues, please open an issue on the [GitHub repository](https:/
 
 ---
 
-**⭐ If you find this project helpful, please consider giving it a star!**git 
+**⭐ If you find this project helpful, please consider giving it a star!**
