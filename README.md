@@ -259,7 +259,7 @@ These metrics help users understand model reliability and make informed decision
 - **Login Required**: Protected routes prevent unauthorized access
 - **SQL Injection Prevention**: Consider using parameterized queries (to be improved)
 
-## 📝 Notes & Future Improvements
+<!-- ## 📝 Notes & Future Improvements
 
 1. **Migrate to ORM**: Replace raw SQL queries with SQLAlchemy ORM for security
 2. **Data Augmentation**: Implement augmentation techniques for better model generalization
@@ -268,7 +268,7 @@ These metrics help users understand model reliability and make informed decision
 5. **Containerization**: Docker setup for easy deployment
 6. **Unit Tests**: Add comprehensive test coverage
 7. **Model Versioning**: Implement model versioning and A/B testing
-8. **Batch Processing**: Support for analyzing multiple images
+8. **Batch Processing**: Support for analyzing multiple images -->
 
 ## 📚 Training Notebooks
 
@@ -317,6 +317,4 @@ For questions or issues, please open an issue on the [GitHub repository](https:/
 
 ---
 
-**⭐ If you find this project helpful, please consider giving it a star!**
-
-**Last Updated**: June 2025
+**⭐ If you find this project helpful, please consider giving it a star!**git 
